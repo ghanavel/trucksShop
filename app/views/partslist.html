@@ -1,0 +1,25 @@
+<div class="container" >
+	
+<!-- <pre>{{vm.countries | json}}</pre> -->
+	  <div class="pull-right">
+	  	<a href="#!/update">
+	  		<button type="button" class="btn btn-primary ">
+	  			Add Truks Parts
+	  		</button>
+	    	</a>
+	  </div>
+
+	<table class="table">
+					
+	  <tr ng-repeat="user in users">
+	  	<td>{{user.username}}</td>
+	  	<td>{{user.email}}</td>
+	  	<td</td>
+	  	<td><a href="#edit/{{user.id}}"><button type="button" class="btn btn-primary ">EDIT</button></a></td>
+	  	<td><button type="button" class="btn btn-primary " ng-click="deletUser(user.id)">DELETE</button></a></td>
+	  	
+	  </tr>
+	</table>
+
+
+</div>

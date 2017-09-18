@@ -1,0 +1,61 @@
+<div>
+	<form  class="form-horizontal" novalidate name="partsForm" ng-submit="save()">
+
+
+	<div class="form-group" ng-class="{'has-error': partsForm.username.$invalid && partsForm.partname.$dirty, 'has-success': partsForm.partname.$valid && partsForm.partname.$dirty }">
+		<label for="inputPartname" class="col-sm-2 control-label">Parts name (*)</label>
+		<div class="col-sm-10">
+		<input type="text" name="partsname"  placeholder="Parts name"  class="form-control"  ng-model="partsItem.partname" required />
+				
+		<p class="text-danger"  ng-if="partsForm.partsname.$dirty && partsForm.partsname.$error.required">Parts name is required</p>				
+	
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="inputEmail3" class="col-sm-2 control-label">Email  (*)</label>
+		<div class="col-sm-10">
+		<input type="email" name="email"  class="form-control" ng-model="partsItem.email" required placeholder="Contact email" />
+		<p class="help-block"  ng-if="partsForm.email.$dirty && partsForm.email.$error.required">Email is required</p>
+		<p class="help-block"   ng-if="!partsForm.email.$error.required && partsForm.email.$invalid">Enter valid email format</p>	</div>
+	</div>
+
+
+	<div class="form-group">
+		<label for="inputName" class="col-sm-2 control-label">Description  (*)</label>
+		<div class="col-sm-10">
+		<textarea class="form-control" rows="3" ng-model="partsItem.description" name="description" required></textarea>
+		<p class="help-block"  ng-if="partsForm.description.$dirty && partsForm.description.$error.required">Description is required</p>
+		</div>
+	</div>				
+
+	<div class="form-group">
+		<label for="inputName" class="col-sm-2 control-label">Country (*)</label>
+		<div class="col-sm-10">
+
+			<select class="form-control" ng-model="partsItem.country" name="country" ng-options="country.name for country in vm.countries">
+				
+			</select>
+			<p class="help-block"  ng-if="partsForm.country.$dirty && partsForm.country.$error.required">Description is required</p>
+
+
+		</div>
+	</div>					
+
+	
+	<div class="form-group">
+		
+		<div class="col-sm-10 col-sm-offset-4">
+			
+			<button type="button" class="btn btn-primary"   ng-click="updateUser(partsItem)">Edit</button>
+			
+		</div>
+	</div>	
+
+
+</form>
+
+<pre>{{partsItem}}</pre>
+<pre>{{users}}</pre>
+</div>
+
