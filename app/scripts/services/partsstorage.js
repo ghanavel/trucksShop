@@ -16,8 +16,7 @@ angular.module('trucksShopApp')
 
     // Public API here
     return {
-        get: function(){
-          
+        get: function(){          
           
           return  JSON.parse(localStorage.getItem(PARTS_DETAILS) ||  '[]');
         },

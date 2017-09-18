@@ -1,27 +1,41 @@
 <div class="container" >
 	
 <!-- <pre>{{vm.countries | json}}</pre> -->
-<pre>{{vm.parts | json}}</pre>
+<!-- <pre>{{vm.parts | json}}</pre>
+<pre>{{vm.parts.length | json}}</pre> -->
+
 
 	  <div class="pull-right">
 	  	<a href="#!/update">
 	  		<button type="button" class="btn btn-primary ">
-	  			Add Truks Parts
+	  			<span class="glyphicon glyphicon-plus-sign"></span> Add Trucks Parts
 	  		</button>
 	    	</a>
 	  </div>
 
-	<table class="table">
-					
-	  <tr ng-repeat="user in users">
-	  	<td>{{user.username}}</td>
-	  	<td>{{user.email}}</td>
-	  	<td</td>
-	  	<td><a href="#edit/{{user.id}}"><button type="button" class="btn btn-primary ">EDIT</button></a></td>
-	  	<td><button type="button" class="btn btn-primary " ng-click="deletUser(user.id)">DELETE</button></a></td>
-	  	
-	  </tr>
-	</table>
+	<div ng-if="vm.parts.length > 0">
+		<table class="table table-bordered table-hover">
+			  <tr>
+			  	<th>Name</th>
+			  	<th>Contact</th>			  	
+			  	<th>Country</th>
+			  	<th>Description</th>
+			  	<th>Edit</th>
+			  	<th>Delete</th>
+			  </tr>					
+			  <tr ng-repeat="part in vm.parts">
+			  	<td>{{part.partname}}</td>
+			  	<td>{{part.email}}</td>
+			  	<td>{{part.country.name}} ({{part.country.code}})</td>
+			  	
+			  	<td>{{part.description}}</td>
+			  	<td class="text-center"><a href="#!/update/{{part.id}}"><button type="button" class="btn btn-primary  "><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+			  	<td class="text-center"><button type="button" class="btn btn-primary " ng-click="deletUser(user.id)"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+			  	
+			  </tr>
+		</table>
+	</div>  
+	
 
 
 </div>
