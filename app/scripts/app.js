@@ -9,13 +9,8 @@
  * Main module of the application.
  */
 angular
-  .module('trucksShopApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+  .module('trucksShopApp', [   
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider

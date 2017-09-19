@@ -81,3 +81,13 @@ body {
     border-bottom: 0;
   }
 }
+
+
+.navbar-default{
+  background-color: #1B296E;
+  
+}
+
+.navbar-default .navbar-brand{
+  color: #fff !important;
+}
