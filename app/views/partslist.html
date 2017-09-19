@@ -32,7 +32,7 @@
 			  	
 			  	<td>{{part.description}}</td>
 			  	<td class="text-center"><a href="#!/update/{{$index + 1}}"><button type="button" class="btn btn-primary  "><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-			  	<td class="text-center"><button type="button" class="btn btn-primary " ng-click="deletUser(user.id)"><span class="glyphicon glyphicon-trash"></span></button></a></td>
+			  	<td class="text-center"><button type="button" class="btn btn-primary " ng-click="deletParts($index + 1)"><span class="glyphicon glyphicon-trash"></span></button></a></td>
 			  	
 			  </tr>
 		</table>

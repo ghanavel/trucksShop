@@ -13,25 +13,35 @@ angular.module('trucksShopApp')
     var vm = this; 
     vm.countries = countryFactory.getAllCountry();
     var parts = vm.parts = partsStorage.get();
-    //debugger;
+    vm.isEdit = false;
+    
 
-    vm.updateParts = function(item,id){
+    vm.updateParts = function(item){
     	if(!item){
     		return false;			
     	}
 
-    	if(!id){
-    		parts.push(item);
+    	if(!vm.isEdit){
+    		vm.parts.push(item);
+    	}else{
+    		var itemIndex = $routeParams.id - 1;
+    		vm.parts[itemIndex] = item;
+    		
     	}
     	$location.path("#!/");
 	};
 
+	$scope.deletParts = function (id) {
+		vm.parts.splice(vm.parts.indexOf(vm.parts[id-1]), 1);
+		$location.path("#!/");
+	};
 
 
 	vm.getPartsItem = function () {	
 	    var item = vm.parts[$routeParams.id - 1];	
 		if(!!item){
 			vm.partsItem =  item;
+			vm.isEdit = true;
 		}
 		
 
@@ -39,11 +49,11 @@ angular.module('trucksShopApp')
 	};
 
 	vm.getPartsItem(); 
+
    	$scope.$watch(function () {
           return vm.parts;
       }, function(a, b) {
-          if(a !== b){
-			debugger;
+          if(a !== b){			
 			partsStorage.put(parts);
 		}
       },true);
