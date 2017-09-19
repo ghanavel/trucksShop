@@ -2,18 +2,30 @@
 	
 <!-- <pre>{{vm.countries | json}}</pre> -->
 <!-- <pre>{{vm.parts | json}}</pre>
-<pre>{{vm.parts.length | json}}</pre> -->
+ -->
 
 
-	  <div class="pull-right">
-	  	<a href="#!/update">
-	  		<button type="button" class="btn btn-primary ">
-	  			<span class="glyphicon glyphicon-plus-sign"></span> Add Trucks Parts
-	  		</button>
-	    	</a>
-	  </div>
+
+ <div class="alert alert-info" ng-if="vm.parts.length === 0">
+  <strong>Info!</strong> Currenltly We dont contain any material items in our shop,  click here to
+   <a href="#!/update">
+		 Add Trucks Parts now.
+	</a>
+ </div>
+
+ 
+	 
 
 	<div ng-if="vm.parts.length > 0">
+		<div class="row"> 	 
+	 	  <div class="pull-right">
+		  	<a href="#!/update">
+		  		<button type="button" class="btn btn-primary ">
+		  			<span class="glyphicon glyphicon-plus-sign"></span> Add Trucks Parts
+		  		</button>
+		    </a>
+		 </div>
+ 		</div>
 		<table class="table table-bordered table-hover">
 			  <tr>
 			  	<th>S.No</th>
