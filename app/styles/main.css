@@ -91,3 +91,8 @@ body {
 .navbar-default .navbar-brand{
   color: #fff !important;
 }
+
+
+div[ng-view]{
+  min-height: 250px;
+}
