@@ -24,15 +24,15 @@ angular
         controller: 'PartslistCtrl',
         controllerAs: 'vm'
       })
-      .when('/update', {
+      .when('/update/', {
         templateUrl: 'views/updateparts.html',
         controller: 'PartslistCtrl',
         controllerAs: 'vm'
       })
-      .when('/codeeasy', {
-        templateUrl: 'views/codeeasy.html',
-        controller: 'CodeeasyCtrl',
-        controllerAs: 'codeeasy'
+      .when('/update/:id', {
+        templateUrl: 'views/updateparts.html',
+        controller: 'PartslistCtrl',
+        controllerAs: 'vm'
       })
       .when('/partsList', {
         templateUrl: 'views/partslist.html',

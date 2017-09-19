@@ -8,7 +8,7 @@
  * Controller of the trucksShopApp
  */
 angular.module('trucksShopApp')
-  .controller('PartslistCtrl', function ($scope,$location, countryFactory, partsStorage) {
+  .controller('PartslistCtrl', function ($scope,$location,$routeParams, countryFactory, partsStorage) {
   	var partsItem = {};
     var vm = this; 
     vm.countries = countryFactory.getAllCountry();
@@ -16,6 +16,10 @@ angular.module('trucksShopApp')
     //debugger;
 
     vm.updateParts = function(item,id){
+    	if(!item){
+    		return false;			
+    	}
+
     	if(!id){
     		parts.push(item);
     	}
@@ -23,6 +27,18 @@ angular.module('trucksShopApp')
 	};
 
 
+
+	vm.getPartsItem = function () {	
+	    var item = vm.parts[$routeParams.id - 1];	
+		if(!!item){
+			vm.partsItem =  item;
+		}
+		
+
+		
+	};
+
+	vm.getPartsItem(); 
    	$scope.$watch(function () {
           return vm.parts;
       }, function(a, b) {

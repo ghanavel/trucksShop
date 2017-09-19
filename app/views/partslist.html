@@ -16,6 +16,7 @@
 	<div ng-if="vm.parts.length > 0">
 		<table class="table table-bordered table-hover">
 			  <tr>
+			  	<th>S.No</th>
 			  	<th>Name</th>
 			  	<th>Contact</th>			  	
 			  	<th>Country</th>
@@ -24,12 +25,13 @@
 			  	<th>Delete</th>
 			  </tr>					
 			  <tr ng-repeat="part in vm.parts">
+			  	<td>{{$index + 1}}</td>
 			  	<td>{{part.partname}}</td>
 			  	<td>{{part.email}}</td>
 			  	<td>{{part.country.name}} ({{part.country.code}})</td>
 			  	
 			  	<td>{{part.description}}</td>
-			  	<td class="text-center"><a href="#!/update/{{part.id}}"><button type="button" class="btn btn-primary  "><span class="glyphicon glyphicon-pencil"></span></button></a></td>
+			  	<td class="text-center"><a href="#!/update/{{$index + 1}}"><button type="button" class="btn btn-primary  "><span class="glyphicon glyphicon-pencil"></span></button></a></td>
 			  	<td class="text-center"><button type="button" class="btn btn-primary " ng-click="deletUser(user.id)"><span class="glyphicon glyphicon-trash"></span></button></a></td>
 			  	
 			  </tr>
